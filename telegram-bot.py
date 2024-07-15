@@ -11,7 +11,7 @@ from telegram.ext import (ApplicationBuilder, CommandHandler, ContextTypes,
                           MessageHandler, filters)
 from    custom_persona import custom_persona
 
-GPT_BASE_URL = "https://app.customgpt.ai/api/v1/projects/37072/conversations/"
+GPT_BASE_URL = "https://app.customgpt.ai/api/v1/projects/37096/conversations/"
 session_id = ""
 
 
@@ -30,7 +30,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
-        "authorization": "Bearer 4374|hHbPH641zLk0jwGIHKXuA8WSmABLgC4mHUoMHWsi0de461d3"
+        "authorization": "Bearer 4378|hU0E3IRkNysYzHI5oNSNBKEKKEDdoK9gD9H7g7op34cfff59"
     }
 
     response = requests.post(GPT_BASE_URL, json=payload, headers=headers)
@@ -47,14 +47,14 @@ async def send_msg_to_custom_gpt(message):
     url = GPT_BASE_URL + session_id + "/messages?stream=false&lang=en"
     payload = {
         "prompt": message,
-        "response_source": "own_content", # "openai_content"
+        "response_source": "openai_content", # "own_content"
         "custom_persona": custom_persona,
         "chatbot_model": "gpt-4-o"
     }
     headers = {
         "accept": "application/json",
         "Cache-Control": "no-cache",
-        "authorization": "Bearer 4374|hHbPH641zLk0jwGIHKXuA8WSmABLgC4mHUoMHWsi0de461d3"
+        "authorization": "Bearer 4378|hU0E3IRkNysYzHI5oNSNBKEKKEDdoK9gD9H7g7op34cfff59"
     }
     try:
         response = requests.post(url, json=payload, headers=headers)
