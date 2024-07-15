@@ -1,0 +1,6 @@
+logging
+os
+requests
+matplotlib
+python-dotenv
+python-telegram-bot
