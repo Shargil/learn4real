@@ -2,9 +2,9 @@ import logging
 import os
 from chatgpt_client import request_chat_gpt
 import requests
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+# from matplotlib.patches import Rectangle
+# import matplotlib.pyplot as plt
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import (ApplicationBuilder, CommandHandler, ContextTypes,
